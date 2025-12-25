@@ -1,0 +1,56 @@
+\documentclass[a4paper,11pt]{report}
+
+\input{preamble/report_pre.tex}
+\input{preamble/macros.tex}
+\input{preamble/letterfonts.tex}
+\input{preamble/math_commands.tex}
+\usepackage{sectsty}
+\allsectionsfont{\bfseries}
+\usepackage{ebgaramond}
+
+\definecolor{cardinal}{HTML}{9D2235}
+\begin{document}
+
+% Title Page
+\begin{titlepage}
+    \centering
+    % Title
+    {\Huge\bfseries Project Title \\[0.5cm]
+    \textcolor{cardinal}{\textit{Optional Full Title}}}\\[2cm]
+    {\Large\itshape Subtitle (if applicable)}\\[2.5cm]
+    
+    \rule{\textwidth}{0.5mm} \\[0.5cm]
+    
+    % Author and supervisor details
+    {\centering
+        \begin{tabular}{r l}
+            \textbf{Author} & Rishabh Sharad Pomaje\textsuperscript{0}\\
+            \textbf{Supervisor(s)} & Name01\textsuperscript{1}, Name02\textsuperscript{2}\\
+            \textbf{Affiliation(s)} & \textsuperscript{0}University of \LaTeX \\
+            & \textsuperscript{1}\TeX\ Institute\\ 
+            & \textsuperscript{2}\LaTeXe\ Corporation
+        \end{tabular}\\[5cm]
+    \par}
+
+    % Additional note
+    {\itshape This document serves as a detailed project report template solely for academic purposes.}\\
+    \vfill
+
+    {\large\textbf{Date:} \today}
+\end{titlepage}
+
+% Table of Contents
+\newpage
+\pdfbookmark[section]{\contentsname}{toc}
+\tableofcontents
+\newpage
+
+% Chapters
+\chapter{Introduction and Background}
+
+Need to complete at the end like an abstract.
+
+\chapter{Data Exploration}
+
+
+\end{document}

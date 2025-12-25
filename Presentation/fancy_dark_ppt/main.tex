@@ -1,0 +1,153 @@
+\documentclass[12pt,compress,dvipsnames,aspectratio=169]{beamer}
+
+% Packages
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{shadowtext}
+\usepackage{multicol}
+\usepackage[makeroom]{cancel}
+\usepackage{natbib}
+\usepackage{float}
+\usepackage{subcaption}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{animate}
+\usepackage{varwidth}
+\usepackage{appendixnumberbeamer}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+
+% Outer theme and color settings
+\useoutertheme{shadow}
+\usetheme{CambridgeUS}
+\definecolor{iceblue}{RGB}{185, 217, 235}
+\definecolor{leftblue}{RGB}{230,255,255}
+\definecolor{rightblue}{RGB}{111,195,223}
+\definecolor{lefttron}{RGB}{19,44,65}
+\definecolor{myblack}{RGB}{0,0,27}
+\definecolor{mypurple}{RGB}{205,87,255}
+\definecolor{mintgreen}{RGB}{185, 217, 235}
+
+\usecolortheme{owl}
+
+\setbeamercolor{section in head/foot}{fg = white,bg=black}
+\setbeamercolor{title}{fg=iceblue,bg=black}
+\setbeamercolor{titlelike}{fg=yellow,bg=black}
+\setbeamercolor{item}{fg=iceblue}
+\setbeamercolor{block title}{fg=iceblue,bg=lefttron}
+\setbeamercolor{block body}{bg=normal text.bg!80}
+\setbeamertemplate{blocks}[rounded][shadow=true]
+\setbeamertemplate{headline}{}
+\setbeamertemplate{footline}[frame number]
+\setbeamercolor{normal text}{fg=white,bg=myblack}
+
+\setbeamercolor{frametitle right}{fg=white,bg=RoyalBlue}
+
+% Set link colors
+\hypersetup{
+    colorlinks=true,
+    linkcolor=orange,
+    citecolor=lime,
+    filecolor=magenta,
+    urlcolor=orange
+}
+
+\usefonttheme{professionalfonts}
+
+\setbeamercovered{transparent} 
+\setbeamertemplate{navigation symbols}{} 
+
+% Title and Author Information
+\title[Main Title]{Main Title Here}
+\subtitle{\textit{Subtitle Here}}
+\author[Author Name]{
+  Rishabh Pomaje\inst{1} \and Co-Author\inst{2}
+}
+\institute[Institute Name]{
+  \inst{1} Dept. of Electrical, Electronics and Communication Engineering, \\ 
+  Indian Institute of Technology Dharwad, Karnataka.
+  \and
+  \inst{2} Faculty of \LaTeXe \\ 
+  University of \TeX
+}
+\date{\today}
+
+\titlegraphic{
+\begin{center}
+\vspace*{-30pt}
+\vspace*{10pt}
+\includegraphics[height=0.03\textheight]{figures/mail_logo.png}\hspace*{2pt}
+{\scriptsize \href{mailto:210020036@iitdh.ac.in}{210020036@iitdh.ac.in}}\hspace*{20pt}
+\end{center}
+}
+
+% Custom environments 
+\newtheorem{myexercise}{Exercise}
+
+% Set colors for custom environments
+\setbeamercolor{myexercise}{fg=white,bg=orange}
+
+% Begin Document
+\begin{document}
+
+% Title Page
+\begin{frame}[plain]
+\titlepage
+\end{frame}
+
+% Introduction Frame
+\begin{frame}{Introduction}
+\begin{itemize}
+    \item Welcome to the presentation on Beamer.
+    \item We'll explore its features for creating impactful slides.
+    \item This presentation is structured to guide you step-by-step.
+    \item Relevant references are provided for deeper understanding \citep{Zhang2001}.
+\end{itemize}
+\begin{align}
+    E = mc^2
+\end{align}
+\end{frame}
+
+% Using Blocks
+\begin{frame}{Using Blocks in Beamer}
+\begin{block}{Standard Block}
+This is a standard block for general content.
+\end{block}
+
+\begin{alertblock}{Alert Block}
+This block highlights key warnings or important points.
+\end{alertblock}
+
+\begin{exampleblock}{Example Block}
+This block is used to display an example/ fact/ etc.
+\end{exampleblock}
+\end{frame}
+
+% Using Theorem, Lemma, and Exercise Containers
+\begin{frame}{Theorem, Lemma, and Exercise Example}
+
+\begin{theorem}
+This is a sample theorem.
+\end{theorem}
+
+\begin{lemma}
+This is a sample lemma.
+\end{lemma}
+
+\begin{myexercise}
+Solve the following problem: \\ 
+Find the value of $x$ such that $x^2 = 4$.
+\end{myexercise}
+
+\end{frame}
+
+% References
+\begin{frame}{References}
+\bibliographystyle{apalike}
+\bibliography{references} 
+\end{frame}
+
+\end{document}

@@ -1,0 +1,187 @@
+\documentclass[aspectratio=169]{beamer}
+
+% ======================================================================
+% PACKAGES
+% ======================================================================
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% Fonts
+\usepackage{libertinus} % For Libertinus serif and math
+
+% Math and symbols
+\usepackage{amsmath, amssymb, amsfonts, mathtools}
+\usepackage{bm}             % Bold math symbols
+\usepackage{physics}        % Brackets, derivatives, etc.
+\usepackage{nicefrac}       % Better-looking fractions
+
+% Graphics and tables
+\usepackage{graphicx}
+\usepackage{booktabs}       % Nice tables
+\usepackage{multirow}
+\usepackage{colortbl}       % Colored cells
+\usepackage{tikz}           % Drawing
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+% Code and listings
+\usepackage{listings}
+\usepackage[svgnames, dvipsnames, x11names]{xcolor}
+
+% Links
+\usepackage{hyperref}
+
+% Other
+\usepackage{microtype}      % Better spacing
+\usepackage{siunitx}        % SI units
+\sisetup{detect-all}
+
+% ======================================================================
+% COLORS
+% ======================================================================
+\definecolor{bgcolor}{HTML}{000000}       % Background
+\definecolor{textcolor}{HTML}{E0E0E0}     % Text
+\definecolor{accent}{HTML}{64B5F6}        % Accent blue
+\definecolor{subtle}{HTML}{B0BEC5}        % Grayish text
+\definecolor{codebg}{HTML}{1E1E1E}        % Code block background
+\definecolor{codefg}{HTML}{C8C8C8}        % Code text
+
+% ======================================================================
+% BEAMER STYLE
+% ======================================================================
+\useinnertheme{default}
+\useoutertheme{default}
+\usecolortheme{default}
+\usefonttheme{professionalfonts}
+
+\setbeamercolor{background canvas}{bg=bgcolor}
+\setbeamercolor{normal text}{fg=textcolor,bg=bgcolor}
+\setbeamercolor{frametitle}{fg=accent}
+\setbeamercolor{title}{fg=accent}
+\setbeamercolor{subtitle}{fg=subtle}
+\setbeamercolor{item}{fg=accent}
+\setbeamercolor{section in toc}{fg=accent}
+\setbeamercolor{block title}{bg=accent, fg=bgcolor}
+\setbeamercolor{block body}{bg=bgcolor, fg=textcolor}
+
+\setbeamertemplate{navigation symbols}{} % Hide navigation icons
+\setbeamertemplate{itemize items}{\color{accent}\small\textbullet}
+\setbeamertemplate{enumerate items}[default]
+
+% Title Page
+\setbeamertemplate{title page}{
+  \begin{center}
+    \vspace*{2cm}
+    {\usebeamerfont{title}\usebeamercolor[fg]{title}\LARGE\inserttitle\par}
+    \vspace{0.3cm}
+    {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\large\insertsubtitle\par}
+    \vspace{1.5cm}
+    {\usebeamerfont{author}\insertauthor\par}
+    \vspace{0.3cm}
+    {\usebeamerfont{date}\insertdate\par}
+  \end{center}
+}
+
+% ======================================================================
+% LISTINGS CONFIG
+% ======================================================================
+\lstset{
+  backgroundcolor=\color{codebg},
+  basicstyle=\ttfamily\small\color{codefg},
+  keywordstyle=\color{accent},
+  commentstyle=\color{subtle}\itshape,
+  stringstyle=\color{accent},
+  frame=single,
+  breaklines=true,
+  showstringspaces=false
+}
+
+% ======================================================================
+% DOCUMENT METADATA
+% ======================================================================
+\title{Dark Theme Beamer Presentation}
+\subtitle{Clean, Modern \& Full-featured}
+\author{Your Name}
+\date{\today}
+
+% ======================================================================
+% DOCUMENT
+% ======================================================================
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\section{Overview}
+
+\begin{frame}{What This Template Includes}
+\begin{itemize}
+  \item Clean, high-contrast dark theme
+  \item Modern serif font (Libertinus or EB Garamond)
+  \item Useful packages for math, graphics, code, and tables
+  \item Custom code listing colors
+  \item Fully LaTeX-native, no system fonts required
+\end{itemize}
+\end{frame}
+
+\section{Math \& Code}
+
+\begin{frame}{Math Example}
+\[
+  \mathbb{E}[X^2] = \int_{-\infty}^{\infty} x^2 f_X(x) \dd x
+\]
+\begin{itemize}
+  \item $\bm{\nabla \cdot E = \frac{\rho}{\varepsilon_0}}$
+  \item $\norm{\vec{v}} = \sqrt{\sum v_i^2}$
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Code Example (Python)}
+\begin{lstlisting}[language=Python]
+def entropy(p):
+    return -sum(p_i * math.log2(p_i) for p_i in p if p_i > 0)
+\end{lstlisting}
+\end{frame}
+
+\section{Tables and Graphics}
+
+\begin{frame}{A Clean Table}
+\begin{tabular}{lccc}
+\toprule
+\textbf{Model} & \textbf{Accuracy} & \textbf{Params} & \textbf{Time} \\
+\midrule
+ResNet18 & 91.2\% & 11M & 35ms \\
+MobileNet & 89.7\% & 4.2M & 12ms \\
+TinyCNN & 85.3\% & 500K & 8ms \\
+\bottomrule
+\end{tabular}
+\end{frame}
+
+\begin{frame}{A Simple Plot}
+\begin{tikzpicture}
+  \begin{axis}[
+    width=0.9\textwidth,
+    height=5cm,
+    xlabel={$x$}, ylabel={$f(x)$},
+    axis line style={white},
+    ticklabel style={color=white},
+    every axis y label/.style={at={(axis description cs:-0.05,.5)},anchor=south},
+    every axis x label/.style={at={(axis description cs:.5,-0.1)},anchor=north},
+    grid=both,
+    grid style={dashed, gray!30}
+  ]
+    \addplot[accent, thick, domain=0:5] {exp(-x)*sin(4*x)};
+  \end{axis}
+\end{tikzpicture}
+\end{frame}
+
+\begin{frame}{Thank You!}
+\centering
+{\Large Questions?}
+\vspace{1cm}
+
+\small \url{your.email@example.com}
+\end{frame}
+
+\end{document}

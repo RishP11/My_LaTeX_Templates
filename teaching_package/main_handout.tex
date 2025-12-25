@@ -1,0 +1,102 @@
+\documentclass{tufte-handout}
+
+\usepackage{graphicx} 
+  \setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+  \graphicspath{{figures/}} 
+\usepackage{amsmath}  
+\usepackage{booktabs} 
+\usepackage{units}    
+\usepackage{multicol} 
+\usepackage{lipsum}   
+\usepackage{fancyvrb} 
+  \fvset{fontsize=\normalsize}
+
+% Standardize command font styles and environments
+\newcommand{\doccmd}[1]{\texttt{\textbackslash#1}}% command name -- adds backslash automatically
+\newcommand{\docopt}[1]{\ensuremath{\langle}\textrm{\textit{#1}}\ensuremath{\rangle}}% optional command argument
+\newcommand{\docarg}[1]{\textrm{\textit{#1}}}% (required) command argument
+\newcommand{\docenv}[1]{\textsf{#1}}% environment name
+\newcommand{\docpkg}[1]{\texttt{#1}}% package name
+\newcommand{\doccls}[1]{\texttt{#1}}% document class name
+\newcommand{\docclsopt}[1]{\texttt{#1}}% document class option name
+\newenvironment{docspec}{\begin{quote}\noindent}{\end{quote}}% command specification environment
+
+\usepackage[most]{tcolorbox}
+\usepackage[svgnames, dvipsnames]{xcolor}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{question}[theorem]{Question}
+
+\tcbset{
+  base theorem box/.style={
+    enhanced,
+    colframe=blue!50!black,     
+    colback=blue!5!white,       
+    coltitle=white,             
+    fonttitle=\bfseries,        
+    title filled,               
+    arc=2mm,                    
+    boxrule=0.8pt,              
+    drop shadow=black!75!white, 
+    boxsep=2mm,                 
+    left=2mm,right=2mm,
+    top=2mm,bottom=2mm,
+    before skip=12pt,
+    after skip=12pt,
+    attach boxed title to top left={yshift=-2mm, xshift=2mm},
+  }
+}
+
+% Specific styles with distinct colors
+\newtcbtheorem[number within=section]{Theorem}{Theorem}
+{base theorem box, colback=blue!5, colframe=blue!75!black, colbacktitle=blue!5, coltitle=blue!75!black}{thm}
+
+\newtcbtheorem[use counter from=Theorem]{Lemma}{Lemma}
+{base theorem box, colback=green!5, colframe=green!50!black, colbacktitle=green!5, coltitle=green!50!black}{lem}
+
+\newtcbtheorem[use counter from=Theorem]{Corollary}{Corollary}
+{base theorem box, colback=purple!5, colframe=purple!60!black, colbacktitle=purple!5, coltitle=purple!60!black}{cor}
+
+\newtcbtheorem[use counter from=Theorem]{Example}{Example}
+{base theorem box, colback=orange!5, colframe=orange!70!black, colbacktitle=orange!5, coltitle=orange!70!black}{ex}
+
+\newtcbtheorem[use counter from=Theorem]{Question}{Question}
+{base theorem box, colback=pink!5, colframe=pink!70!black, colbacktitle=pink!5, coltitle=pink!70!black}{qst}
+
+\newtcolorbox{terminal}{
+  colback=black,
+  colframe=black!20,
+  coltext=green,
+  fontupper=\ttfamily,
+  left=1mm,
+  right=1mm,
+  top=1mm,
+  bottom=1mm,
+  boxrule=0.2pt,
+  arc=2pt,
+  enhanced
+}
+
+\title{Title of the Document Goes Here}
+\author[Rishabh Pomaje]{Rishabh Pomaje}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+\noindent
+This document describes the Tufte handout \LaTeX\ document style.
+It also provides examples and comments on the style's use.
+Only a brief overview is presented here;
+for a complete reference, see the sample book.
+\end{abstract}
+
+An important point\footnote{This is supposed to be a footnote, but appears as a sidenote!}.
+
+\bibliography{sample-handout}
+\bibliographystyle{plainnat}
+
+\end{document}

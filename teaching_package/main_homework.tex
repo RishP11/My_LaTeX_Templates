@@ -1,0 +1,139 @@
+\documentclass[a4paper, 11pt]{article}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{fancybox} 
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{lipsum} 
+\usepackage{natbib}
+\usepackage{libertine}
+\usepackage{sectsty}
+\allsectionsfont{\sffamily}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=RoyalBlue,
+    citecolor=green,    
+    filecolor=magenta,  
+    urlcolor=Mahogany   
+}
+\geometry{a4paper, margin=25mm}
+
+\usepackage[most]{tcolorbox}
+\usepackage[svgnames, dvipsnames]{xcolor}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{question}[theorem]{Question}
+
+% Base style
+\tcbset{
+  base theorem box/.style={
+    enhanced,
+    colframe=blue!50!black,     
+    colback=blue!5!white,       
+    coltitle=white,             
+    fonttitle=\bfseries,        
+    title filled,               
+    arc=2mm,                    
+    boxrule=0.8pt,              
+    drop shadow=black!75!white, 
+    boxsep=2mm,                 
+    left=2mm,right=2mm,
+    top=2mm,bottom=2mm,
+    before skip=12pt,
+    after skip=12pt,
+    attach boxed title to top left={yshift=-2mm, xshift=2mm},
+  }
+}
+
+
+% Specific styles with distinct colors
+\newtcbtheorem[number within=section]{Theorem}{Theorem}
+{base theorem box, colback=blue!5, colframe=blue!75!black, colbacktitle=blue!5, coltitle=blue!75!black}{thm}
+
+\newtcbtheorem[use counter from=Theorem]{Lemma}{Lemma}
+{base theorem box, colback=green!5, colframe=green!50!black, colbacktitle=green!5, coltitle=green!50!black}{lem}
+
+\newtcbtheorem[use counter from=Theorem]{Corollary}{Corollary}
+{base theorem box, colback=purple!5, colframe=purple!60!black, colbacktitle=purple!5, coltitle=purple!60!black}{cor}
+
+\newtcbtheorem[use counter from=Theorem]{Example}{Example}
+{base theorem box, colback=orange!5, colframe=orange!70!black, colbacktitle=orange!5, coltitle=orange!70!black}{ex}
+
+\newtcbtheorem[use counter from=Theorem]{Question}{Question}
+{base theorem box, colback=pink!5, colframe=pink!70!black, colbacktitle=pink!5, coltitle=pink!70!black}{qst}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\thepage}
+\chead{\title{}}
+\lhead{\textsc{Course-Code Course Name}}
+
+\begin{document}
+
+\begin{Sbox}
+    \begin{minipage}{\textwidth}
+        \thispagestyle{empty}
+        \begin{center}
+            \textsc{\Large Course-Code: Course Name} \\[0.5cm] 
+            \textbf{\Large \sffamily Assignment Title}    
+        \end{center}
+        \vfill
+        \begin{tabular}{p{0.3\textwidth} p{0.6\textwidth}}
+            \textbf{Author:} & Rishabh Sharad Pomaje \\ 
+            \textbf{Instructor:} & Instructor Name \\ 
+            \textbf{Roll Number:} & Your Roll Number \\ 
+            \textbf{Email:} & \href{mailto:rishabhp@stanford.edu}{\texttt{rishabhp@stanford.edu}}
+        \end{tabular}
+    \end{minipage}
+\end{Sbox}
+
+\begin{center}
+    \fbox{\TheSbox}
+\end{center}
+\hrule
+
+\section{Introduction}
+\lipsum[2]
+
+\begin{Theorem}{Rishabh}{ris}
+Let \( f \) be continuous. Then \( f \) is integrable.
+\end{Theorem}
+
+\begin{Lemma}
+This result helps prove the main theorem.
+\end{Lemma}
+
+\begin{Corollary}
+A differentiable function is continuous.
+\end{Corollary}
+
+\begin{Example}
+Let \( f(x) = x^2 \), which is differentiable on \( \mathbb{R} \).
+\end{Example}
+
+\begin{Question}
+What happens if the function is not continuous?
+\end{Question}
+
+
+\section{Main Content}
+\subsection{Subsection 1}
+\lipsum[3]
+
+\subsection{Subsection 2}
+\lipsum[4]
+
+\section{Conclusion}
+\lipsum[5]
+
+% References 
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}
